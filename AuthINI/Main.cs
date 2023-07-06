@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using INIF;
 
 namespace AuthINI
 {
@@ -183,6 +184,15 @@ namespace AuthINI
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var inif = INIF.INIF.getInstance();
+            inif.Path = "../prog.ini";
+            var section = "prog";
+
+            inif.DeleteSection(section);
         }
     }
 }
